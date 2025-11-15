@@ -1,0 +1,93 @@
+/* Simple modern styling for the blog */
+:root{
+  --primary:#0ea5e9;
+  --bg:#f3f6f8;
+  --card:#ffffff;
+  --muted:#6b7280;
+}
+
+*{box-sizing:border-box}
+html, body {
+  height: 100%;
+}
+
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111827;
+  line-height:1.6;
+  /* make page a column flex container so footer can be pushed to the bottom */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:24px;
+}
+
+.site-header{
+  background:linear-gradient(90deg,var(--primary),#3b82f6);
+  color:white;
+  padding:18px 0;
+  box-shadow:0 2px 6px rgba(2,6,23,0.08);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.site-title a{
+  color:white;
+  text-decoration:none;
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+.site-nav a{
+  color:white;
+  margin-left:14px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.content{
+  padding-top:32px;
+  padding-bottom:64px;
+  /* allow main content to grow and push footer to the bottom when content is short */
+  flex: 1 0 auto;
+}
+
+.post-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:0 1px 4px rgba(2,6,23,0.06);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.post-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 20px rgba(2,6,23,0.08);
+}
+
+.post-card h3{margin:0 0 8px 0}
+.post-card .meta{color:var(--muted);font-size:0.95rem;margin-bottom:12px}
+
+.post-detail{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 1px 4px rgba(2,6,23,0.06)}
+.post-detail .meta{color:var(--muted);margin-bottom:12px}
+
+.page{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 1px 4px rgba(2,6,23,0.06)}
+
+.site-footer{background:#0b5c92;color:white;padding:16px 0;text-align:center;margin-top:40px}
+
+/* ensure footer stays after main content in the flex layout */
+.site-footer {
+  margin-top: 0; /* spacing already provided above if needed */
+}
